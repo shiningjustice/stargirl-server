@@ -5,7 +5,6 @@ CREATE TABLE videos (
   video_url TEXT NOT NULL,
   video_title TEXT NOT NULL,
   video_description TEXT,
-  timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
-  user_id uuid NOT NULL,
-  group_id uuid NOT NULL
+  author_id uuid REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+  group_id uuid REFERENCES groups(id) ON DELETE CASCADE NOT NULL
 )
