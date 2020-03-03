@@ -14,8 +14,11 @@
     "seed:pb": "psql -f ./seeds/seed.pbtables.sql -d stargirl",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "predeploy": "npm audit fix",
+    "predeploy": "npm run test && npm audit --fix",
     "deploy": "git push heroku master"
+  },
+  "engines": {
+    "node": "10.16.3"
   },
   "keywords": [],
   "author": "",
