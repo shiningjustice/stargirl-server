@@ -10,6 +10,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV, CLIENT_ORIGIN, DATABASE_URL } = require('./config');
 const knex = require('knex');
+const authRouter = require('./auth/auth-router');
 // const validateBearerToken = require() needs work
 const errorHandler = require('./bin/errorHandler');
 
@@ -52,6 +53,7 @@ app.set('db', db);
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
+app.use('/api/auth', authRouter);
 
 /*******************************************************************
   ERROR HANDLING
