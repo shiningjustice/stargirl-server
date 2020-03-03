@@ -13,6 +13,7 @@ const knex = require('knex');
 const authRouter = require('./auth/auth-router');
 const photosRouter = require('./photos/photos-router');
 const videosRouter = require('./videos/videos-router');
+const lettersRouter = require('./letters/letters-router');
 // const validateBearerToken = require() needs work
 const errorHandler = require('./bin/errorHandler');
 
@@ -58,6 +59,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/photos', photosRouter);
 app.use('/api/videos', videosRouter);
+app.use('/api/letters', lettersRouter);
 
 /*******************************************************************
   ERROR HANDLING
