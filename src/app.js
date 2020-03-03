@@ -12,6 +12,7 @@ const { NODE_ENV, CLIENT_ORIGIN, DATABASE_URL } = require('./config');
 const knex = require('knex');
 const authRouter = require('./auth/auth-router');
 const photosRouter = require('./photos/photos-router');
+const videosRouter = require('./videos/videos-router');
 // const validateBearerToken = require() needs work
 const errorHandler = require('./bin/errorHandler');
 
@@ -56,6 +57,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/auth', authRouter);
 app.use('/api/photos', photosRouter);
+app.use('/api/videos', videosRouter);
 
 /*******************************************************************
   ERROR HANDLING
